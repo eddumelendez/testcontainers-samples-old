@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: DEMO002
+      author: eddumelendez
+      changes:
+        - sqlFile:
+            path: scripts/1.1.0/001_create_role_table.sql
+      rollback:
+        - sqlFile:
+            path: scripts/1.1.0/rollback/001_drop_role_table.sql
+  - changeSet:
+      id: release-1.1.0
+      author: eddumelendez
+      changes:
+        - tagDatabase:
+            tag: 1.1.0

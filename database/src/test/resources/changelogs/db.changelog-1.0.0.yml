@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: DEMO001
+      author: eddumelendez
+      changes:
+        - sqlFile:
+            path: scripts/1.0.0/001_create_user_table.sql
+      rollback:
+        - sqlFile:
+            path: scripts/1.0.0/rollback/001_drop_user_table.sql
+  - changeSet:
+      id: release-1.0.0
+      author: eddumelendez
+      changes:
+        - tagDatabase:
+            tag: 1.0.0
